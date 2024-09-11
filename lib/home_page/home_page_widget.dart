@@ -129,6 +129,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
               ),
+              Text(
+                'Hello World',
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
+                    ),
+              ),
             ],
           ),
         ),
