@@ -44,7 +44,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           title: Align(
             alignment: const AlignmentDirectional(0.0, -1.0),
             child: Text(
-              'Page Title',
+              'Main\n',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Inter Tight',
                     color: Colors.white,
@@ -62,41 +62,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    await showDialog(
-                      context: context,
-                      builder: (alertDialogContext) {
-                        return AlertDialog(
-                          title: const Text('hehe'),
-                          content: const Text('hehe'),
-                          actions: [
-                            TextButton(
-                              onPressed: () =>
-                                  Navigator.pop(alertDialogContext),
-                              child: const Text('haha'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      'https://images.unsplash.com/photo-1656618584235-9e51f2345582?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxOXx8YmVhdXRpZnVsJTIwb2NlYW58ZW58MHx8fHwxNzI2MDE5MjM0fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                      width: 200.0,
-                      height: 200.0,
-                      fit: BoxFit.cover,
+              Text(
+                'Hello World',
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
                     ),
-                  ),
-                ),
               ),
               InkWell(
                 splashColor: Colors.transparent,
@@ -153,12 +124,41 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
               ),
-              Text(
-                'Hello World',
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Inter',
-                      letterSpacing: 0.0,
+              Align(
+                alignment: const AlignmentDirectional(0.0, -1.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          title: const Text('hehe'),
+                          content: const Text('hehe'),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: const Text('haha'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(18.0),
+                    child: Image.network(
+                      'https://images.unsplash.com/photo-1677598262431-648095efa66a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMXx8YmVhdXRpZnVsJTIwb2NlYW58ZW58MHx8fHwxNzI2MDE5MjM0fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                      width: 200.0,
+                      height: 200.0,
+                      fit: BoxFit.fill,
                     ),
+                  ),
+                ),
               ),
             ],
           ),
