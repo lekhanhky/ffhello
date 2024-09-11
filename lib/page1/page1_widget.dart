@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'page1_model.dart';
 export 'page1_model.dart';
@@ -71,6 +72,55 @@ class _Page1WidgetState extends State<Page1Widget> {
                     width: 200.0,
                     height: 200.0,
                     fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                height: 200.0,
+                child: CarouselSlider(
+                  items: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network(
+                        'https://picsum.photos/seed/237/600',
+                        width: 200.0,
+                        height: 200.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network(
+                        'https://picsum.photos/seed/583/600',
+                        width: 200.0,
+                        height: 200.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network(
+                        'https://picsum.photos/seed/602/600',
+                        width: 200.0,
+                        height: 200.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                  carouselController: _model.carouselController ??=
+                      CarouselController(),
+                  options: CarouselOptions(
+                    initialPage: 1,
+                    viewportFraction: 0.5,
+                    disableCenter: true,
+                    enlargeCenterPage: true,
+                    enlargeFactor: 0.25,
+                    enableInfiniteScroll: true,
+                    scrollDirection: Axis.horizontal,
+                    autoPlay: false,
+                    onPageChanged: (index, _) =>
+                        _model.carouselCurrentIndex = index,
                   ),
                 ),
               ),
