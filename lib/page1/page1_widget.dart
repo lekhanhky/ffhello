@@ -65,13 +65,22 @@ class _Page1WidgetState extends State<Page1Widget> {
             children: [
               Align(
                 alignment: const AlignmentDirectional(0.0, -1.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.network(
-                    'https://picsum.photos/seed/83/600',
-                    width: 200.0,
-                    height: 200.0,
-                    fit: BoxFit.cover,
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('HomePage');
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.network(
+                      'https://picsum.photos/seed/83/600',
+                      width: 200.0,
+                      height: 200.0,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
